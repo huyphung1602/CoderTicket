@@ -1,12 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/UserMac/Desktop/Ruby/CoderTicket/spec/routes/upcoming_spec.rb": [
+      "/Users/UserMac/Desktop/Ruby/CoderTicket/spec/controllers/events_controller_spec.rb": [
         1,
         null,
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -643,7 +653,7 @@
       "/Users/UserMac/Desktop/Ruby/CoderTicket/app/controllers/events_controller.rb": [
         1,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -657,8 +667,18 @@
         null,
         1,
         null
+      ],
+      "/Users/UserMac/Desktop/Ruby/CoderTicket/app/models/event.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1488426897
+    "timestamp": 1488448546
   }
 }
