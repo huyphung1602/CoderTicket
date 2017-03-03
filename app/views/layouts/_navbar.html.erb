@@ -1,11 +1,32 @@
-<nav class="navbar navbar-top navbar-dark bg-inverse">
-  <a class="navbar-brand" href="<%= root_path %>">Coder Ticket</a>
-  <ul class="nav navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Log In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Sign Up</a>
-    </li>
-  </ul>
+<nav class="navbar navbar-toggleable-md navbar-top navbar-inverse" style="background-color: #27408B;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand" href="<%= root_path %>">Events Catcher</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="nav navbar-nav mr-auto">
+      <% if !signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= new_session_path %>">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= new_user_path %>">Sign Up</a>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav">
+      <% if signed_in? %>
+        <span class="navbar-text">
+          Logged in as <%= current_user.email %>
+        </span>
+        <li class="nav-item">
+          <%= link_to "Log Out", log_out_path, method: 'delete', class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </nav><br>

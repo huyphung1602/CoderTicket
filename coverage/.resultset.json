@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/UserMac/Desktop/Ruby/CoderTicket/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/UserMac/Desktop/Ruby/CoderTicket/spec/views/home/index.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -563,64 +563,12 @@
         1,
         1,
         1,
-        null,
-        1,
         1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/UserMac/Desktop/Ruby/CoderTicket/app/helpers/application_helper.rb": [
@@ -634,6 +582,14 @@
         null,
         null
       ],
+      "/Users/UserMac/Desktop/Ruby/CoderTicket/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/UserMac/Desktop/Ruby/CoderTicket/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
       "/Users/UserMac/Desktop/Ruby/CoderTicket/app/helpers/tickets_helper.rb": [
         1,
         null
@@ -643,6 +599,6 @@
         null
       ]
     },
-    "timestamp": 1488578213
+    "timestamp": 1488582527
   }
 }
