@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
   root 'events#index'
-
   get 'upcoming' => 'events#index'
 
   resources :events do
