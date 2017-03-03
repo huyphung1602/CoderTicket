@@ -5,4 +5,18 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :extended_html_description, :venue, :category, :starts_at
   validates_uniqueness_of :name, uniqueness: {scope: [:venue, :starts_at]}
+
+  def self.upcoming
+    Event.where("starts_at > ?", Time.now)
+  end
+
+  delegate :name, to: :venue, allow_nil: true, prefix: true
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
 end
