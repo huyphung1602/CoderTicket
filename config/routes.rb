@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   resources :events do
     resources :tickets
+    member do
+      post 'publish'
+    end
   end
   
   root 'home#index'
