@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create]
+  resources :venues, only: [:new, :create]
   resources :events do
     resources :tickets
     member do

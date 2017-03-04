@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+  <h1>Create New Venue</h1><br>
+  <%= form_for @venue do |f| %>
+    <% if @venue.errors.size > 0 %>
+      <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error!</strong> <%= @venue.errors.full_messages.to_sentence %>
+      </div>
+    <% end %>
+
+    <strong><%= f.label :name %></strong>
+    <%= f.text_field :name, placeholder: 'Venue name', class: 'form-control' %>
+    <br>
+
+    <p><strong>Address</strong></p>
+    <%= f.text_field :full_address, placeholder: 'Venue address', class: 'form-control' %>
+    <br>
+
+    <p><strong>Region</strong></p>
+    <%= f.select :region_id, @regions.map{|u| [u.name, u.id]}, {}, class: "form-control" %>
+    <br>
+
+    <%= f.submit 'Create Venue', class: 'btn btn-success button' %>
+
+  <% end %>
+</div><br><br>
