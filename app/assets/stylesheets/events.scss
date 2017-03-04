@@ -15,7 +15,8 @@
   } 
   input {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     border-bottom-color: rgb(85, 85, 85);
     border-bottom-left-radius: 2px;
     border-bottom-style: none;
@@ -37,7 +38,7 @@
     line-height: 24.2857px;
     max-width: 100%;
     outline-color: rgb(85, 85, 85);
-    padding-bottom: 0px;
+    padding-bottom: none;
     padding-left: 19px;
     padding-right: 19px;
     padding-top: 0px;
@@ -54,7 +55,7 @@
 }
 
 .events-list {
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 30px 150px;
     background-color: $gray-lighter;
     .card {

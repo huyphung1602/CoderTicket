@@ -1,3 +1,4 @@
+<br>
 <div class="container">
   <h1>Create new event</h1><br>
   <%= form_for @event do |f| %>
@@ -24,11 +25,11 @@
 
     <p><strong>Starts at</strong></p>
     <%= f.datetime_select :starts_at , class: 'datepicker' %>
-    <br>
+    <br><br>
 
     <p><strong>Ends at</strong></p>
     <%= f.datetime_select :ends_at , class: 'form-control' %>
-    <br>
+    <br><br>
 
     <p><strong>Image URL</strong></p>
     <%= f.text_field :hero_image_url, placeholder: 'Image URL', class: 'form-control' %>
@@ -41,4 +42,4 @@
     <%= f.submit 'Create Event', class: 'btn btn-success button' %>
 
   <% end %>
-</div>
+</div><br><br>
