@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :event_edit_permission?, only: [:edit]
+
   def index
     @events = Event.all.order('created_at DESC')
 
@@ -18,9 +20,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new user_params
+    @event = Event.new event_params
     @categories = Category.all
     @venues = Venue.all
+    @event.owner = current_user
 
     if @event.save!
       flash[:success] = "Event has been created successfully."
@@ -28,6 +31,25 @@ class EventsController < ApplicationController
     else
       flash[:error] = "Failed to create event. Please check all the field."
       redirect_to new_event_path
+    end
+  end
+
+  def edit
+    @categories = Category.all
+    @venues = Venue.all
+  end
+
+  def update
+    @event = Event.find(params[:id].to_param)
+    @categories = Category.all
+    @venues = Venue.all
+
+    if @event.update(event_params)
+      flash[:success] = "Event has been updated successfully."
+      redirect_to "/events/#{@event.to_param}"
+    else
+      flash[:error] = "Failed to update event. Please check all the field."
+      redirect_to edit_event_path
     end
   end
 

@@ -1,0 +1,41 @@
+<%= form_for @event do |f| %>
+  <% if @event.errors.size > 0 %>
+    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Error!</strong> <%= @event.errors.full_messages.to_sentence %>
+    </div>
+  <% end %>
+  
+  <strong><%= f.label :name %></strong>
+  <%= f.text_field :name, placeholder: 'Event name', class: 'form-control' %>
+  <br>
+  
+  <p><strong>Category</strong></p>
+  <%= f.select :category_id, @categories.map{|u| [u.name, u.id]}, {}, class: "form-control" %>
+  <br>
+  
+  <p><strong>Venue</strong></p>
+  <%= f.select :venue_id, @venues.map{|u| [u.name, u.id]}, {}, class: 'form-control' %>
+  <br>
+  
+  <p><strong>Starts at</strong></p>
+  <%= f.datetime_select :starts_at , class: 'datepicker' %>
+  <br><br>
+  
+  <p><strong>Ends at</strong></p>
+  <%= f.datetime_select :ends_at , class: 'form-control' %>
+  <br><br>
+  
+  <p><strong>Image URL</strong></p>
+  <%= f.text_field :hero_image_url, placeholder: 'Image URL', class: 'form-control' %>
+  <br>
+  
+  <p><strong>Extended HTML Description</strong></p>
+  <%= f.text_area :extended_html_description, placeholder: 'Add your extended html description here',   class: 'form-control' %>
+  <br>
+  
+  <%= f.submit button_name, class: button_type %>
+
+<% end %>

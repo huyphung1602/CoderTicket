@@ -28,6 +28,20 @@
       <div class="hero-img hidden-sm-down" style="background-image: url(<%= @event.hero_image_url %>); background-size: cover;"> </div>
       <div class="container">
         <h3> <%= @event.name %> </h3>
+
+        <% if is_event_owner? %>
+          <a href="#" class="btn btn-success btn-sm" role="button">
+            <i class="fa fa-ticket" aria-hidden="true"></i> Add Ticket Types
+          </a>
+          <a href="<%= edit_event_path %>" class="btn btn-info btn-sm" role="button">
+            <i class="fa fa-pencil" aria-hidden="true"></i> Edit Event
+          </a>
+          <a href="#" class="btn btn-primary btn-sm" role="button">
+            <i class="fa fa-check" aria-hidden="true"></i> Publish Event
+          </a>
+          <br><br><br>
+        <% end %>
+
         <div class="pull-left">
           <%= fa_icon 'clock-o' %>
         </div>
@@ -47,6 +61,7 @@
         <div class="img-spacer">
           <%= image_tag 'shadow-top.png' %>
         </div>
+
         <div class="extended-description">
           <%= @event.extended_html_description.html_safe %>
         </div>

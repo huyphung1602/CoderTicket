@@ -4,8 +4,8 @@ class VenuesController < ApplicationController
     @regions = Region.all
   end
 
-  def create
-    @venue = Venue.new
+  def create 
+    @venue = Venue.new venue_params
     @regions = Region.all
 
     if @venue.save!
@@ -18,7 +18,7 @@ class VenuesController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit( :name, :full_address, :region_id)
+    def venue_params
+      params.require(:venue).permit( :name, :full_address, :region_id)
     end
 end
