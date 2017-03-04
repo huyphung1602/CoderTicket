@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?, :is_event_owner?, :event_edit_permission?
+  helper_method :current_user, :signed_in?,
+                :is_event_owner?, :event_edit_permission,
+                :is_published
 
   def current_user 
     return @current_user if @current_user
@@ -29,6 +31,16 @@ class ApplicationController < ActionController::Base
     if !is_event_owner?
       flash[:notice] = "You must be the event owner to see this page"
       redirect_to root_path
+    end
+  end
+
+  def is_published?
+    @event = Event.find(Event.find(params[:id]))
+
+    if @event.published_at == nil
+      false
+    else
+      true
     end
   end
 end
