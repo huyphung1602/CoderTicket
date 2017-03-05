@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   belongs_to :category
   belongs_to :owner, class_name: 'User'
   has_many :ticket_types
+  has_many :tickets
   validates_presence_of :extended_html_description, :venue, :category, :starts_at, :name
   validates_uniqueness_of :name, uniqueness: {scope: [:venue, :starts_at]}
   scope :published, -> { where.not(published_at: nil) }

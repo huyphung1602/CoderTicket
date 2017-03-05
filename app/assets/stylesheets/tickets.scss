@@ -4,7 +4,9 @@
 
 .tickets-buy {
   background-color: $gray-lightest;
-  padding-bottom: 80px;
+  background-image: url("main-bg.png");
+  background-repeat: repeat;
+  padding-bottom: 300px;
   .tickets-header {
     padding-top: 60px;
     padding-bottom: 30px;

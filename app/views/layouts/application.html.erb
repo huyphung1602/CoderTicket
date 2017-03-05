@@ -10,6 +10,18 @@
 <body>
 
 <%= render 'layouts/navbar' %>
+
+<div class="flash-mes">
+  <% if flash_messages.presence %>
+    <div class="container">
+      <br>
+      <%= flash_messages %>
+    </div>
+  <% else %>
+    <br>
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>

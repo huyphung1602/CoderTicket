@@ -1,4 +1,4 @@
-<div class="container-fluid no-pad events-detail">
+<div class="container-fluid no-pad events-detail behind-side-bar">
   <div class="row no-pad">
     <div class="col-md-3 sidebar">
       <p>
@@ -19,7 +19,7 @@
           </div>
           <div class="clearfix"></div>
         <% end %>
-        <%= link_to new_event_ticket_path(@event) do %>
+        <%= link_to new_event_ticket_path(event_id: @event.id) do %>
           <button class='btn btn-lg btn-block btn-danger'> BOOK NOW </button>
         <% end %>
       </div>

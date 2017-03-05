@@ -25,3 +25,19 @@ body {
   background-image: url("sidebar-bg.png");
   background-repeat: repeat;
 }
+
+.flash-mes {
+  background-image: url("main-bg.png");
+  background-repeat: repeat;
+}
+
+.new-event {
+  background-image: url("main-bg.png");
+  background-repeat: repeat;
+}
+
+.new-venue, .new-ticket-type, .behind-side-bar {
+  background-image: url("main-bg.png");
+  background-repeat: repeat;
+  padding-bottom: 300px
+}
