@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+  <h1><%= @event.name %></h1>
+  <h1>Create New Ticket Type</h1><br>
+
+  <%= form_for @ticket_type, url: event_ticket_types_path(event_id: @event.id) do |f| %>
+    <% if @ticket_type.errors.size > 0 %>
+      <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error!</strong> <%= @ticket_type.errors.full_messages.to_sentence %>
+      </div>
+    <% end %>
+
+    <strong><%= f.label :name %></strong>
+    <%= f.text_field :name, placeholder: 'Ticket type name', class: 'form-control' %>
+    <br>
+
+    <p><strong>Price</strong></p>
+    <%= f.number_field :price, placeholder: 'VND', class: 'form-control' %>
+    <br>
+
+    <p><strong>Max Quantity</strong></p>
+    <%= f.number_field :max_quantity, placeholder: 'Max number of tickets', class: 'form-control' %>
+    <br>
+
+    <%= f.submit 'Create Ticket Type', class: 'btn btn-success button' %>
+
+  <% end %>
+</div><br><br>

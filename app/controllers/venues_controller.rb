@@ -8,12 +8,11 @@ class VenuesController < ApplicationController
     @venue = Venue.new venue_params
     @regions = Region.all
 
-    if @venue.save!
+    if @venue.save
       flash[:success] = "Venue has been created successfully."
       redirect_to root_path
     else
-      flash[:error] = "Failed to create venue. Please check all the field."
-      redirect_to new_venue_path
+      render 'new'
     end
   end
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :venues, only: [:new, :create]
   resources :events do
     resources :tickets
+    resources :ticket_types, only: [:new, :create]
     member do
       post 'publish'
     end

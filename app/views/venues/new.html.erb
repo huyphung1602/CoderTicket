@@ -1,6 +1,7 @@
 <br>
 <div class="container">
   <h1>Create New Venue</h1><br>
+
   <%= form_for @venue do |f| %>
     <% if @venue.errors.size > 0 %>
       <div class="alert alert-danger alert-dismissible fade in" role="alert">
@@ -24,6 +25,5 @@
     <br>
 
     <%= f.submit 'Create Venue', class: 'btn btn-success button' %>
-
   <% end %>
 </div><br><br>

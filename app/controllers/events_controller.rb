@@ -25,12 +25,11 @@ class EventsController < ApplicationController
     @venues = Venue.all
     @event.owner = current_user
 
-    if @event.save!
+    if @event.save
       flash[:success] = "Event has been created successfully."
       redirect_to root_path
     else
-      flash[:error] = "Failed to create event. Please check all the field."
-      redirect_to new_event_path
+      render 'new'
     end
   end
 
@@ -48,8 +47,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event has been updated successfully."
       redirect_to "/events/#{@event.to_param}"
     else
-      flash[:error] = "Failed to update event. Please check all the field."
-      redirect_to edit_event_path
+      render 'edit'
     end
   end
 

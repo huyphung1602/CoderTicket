@@ -30,7 +30,7 @@
         <h3> <%= @event.name %> </h3>
 
         <% if is_event_owner? %>
-          <a href="#" class="btn btn-success btn-sm" role="button">
+          <a href="<%= new_event_ticket_type_path(event_id: @event.id)%>" class="btn btn-success btn-sm" role="button">
             <i class="fa fa-ticket" aria-hidden="true"></i> Add Ticket Types
           </a>
           <a href="<%= edit_event_path %>" class="btn btn-info btn-sm" role="button">
