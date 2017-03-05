@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       post 'publish' => 'events#have_enough_ticket_types?'
     end
+    collection do
+      get 'my' => 'events#my_events'
+    end
   end
   
   root 'home#index'

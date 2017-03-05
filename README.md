@@ -1,9 +1,9 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *Tickets Hunter*
 
 **Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **HuyPhung**
-- Time spent: **0** hours
+- Time spent: **60** hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
@@ -50,7 +50,7 @@ The person with best test coverage will win a small present from the instructor 
 * [x] Users can create venues.
 * [x] An event must have at least one `ticket_type` defined before it can be published.
     * **HINT**: add `Event#have_enough_ticket_types?` (and test it)
-* [ ] User can see a list of events he or she has created.
+* [x] User can see a list of events he or she has created.
     * Suggestions
         * You can use `/events/mine` [collection routes](http://guides.rubyonrails.org/routing.html#adding-more-restful-actions)
 * [x] Users can edit their event after creation. But only the user who created the event can edit the event.
@@ -66,6 +66,9 @@ The person with best test coverage will win a small present from the instructor 
 * [ ] Ticket types have an optional "minimum" purchase quantity. ([Example Screenshot](http://i.imgur.com/DOYtAR0.png))
 * [ ] Events are automatically labeled as "Hot". "Hot" events should have a red border or some sort of visual flourish. The event title should also be prefixed with "**HOT:**".
 * [ ] Instead of showing all of the events on the main page, an "admin" user can dictate the events that show up on the main page.
+
+### My Own Optional Stories
+* [x] Beautiful UI with textures for background, navbar and sidebar
 
 ## Notes
 

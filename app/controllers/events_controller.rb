@@ -9,6 +9,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def my_events
+    @events = Event.where(owner_id: current_user.id)
+  end
+
   def show
     @event = Event.find(params[:id].to_param)
   end

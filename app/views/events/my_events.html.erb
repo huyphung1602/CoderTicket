@@ -1,0 +1,26 @@
+<div class='myevents-header' style='background-image: url(<%= header_background_image_url %>)'>
+  <div class="container">
+    <h2> Events that you created </h2>
+  </div>
+</div>
+<% if @events.count > 0 %>
+<div class="container-fluid events-list">
+    <% @events.in_groups_of(@events.count) do |g| %>
+      <div class="row">
+        <% g.compact.each do |e| %>
+            <%= render partial: 'card', locals: {event: e} %>
+        <% end %>
+      </div>  
+    <% end %>
+  </div>
+</div>
+<% else %>
+  <div class="myevents-nothing">
+    <br>
+    <div class="container">
+      <div class="alert alert-info alert-dismissible fade in" role="alert">
+        <strong>You did not create any events yet!</strong>
+      </div>
+    </div>
+  </div>
+<% end %>
