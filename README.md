@@ -1,10 +1,10 @@
 # Homework 3 - *Tickets Hunter*
 
-**Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
+**Tickets Hunter** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **HuyPhung**
 - Time spent: **60** hours
-- URL: **Insert your Heroku URL here**
+- URL: **https://ticketshunter.herokuapp.com/**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
 ## User Stories
