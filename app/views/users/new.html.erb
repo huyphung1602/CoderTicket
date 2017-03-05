@@ -1,28 +1,30 @@
-<br>
-<div class="container">
-  <h1>Sign Up</h1><br>
-  <%= form_for @user do |f| %>
-    <% if @user.errors.size > 0 %>
-      <div class="alert alert-danger alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>Error!</strong> <%= @user.errors.full_messages.to_sentence %>
-      </div>
+<div class="user-bg">
+  <br>
+  <div class="container">
+    <h1><strong>Sign Up</strong></h1><br>
+    <%= form_for @user do |f| %>
+      <% if @user.errors.size > 0 %>
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Error!</strong> <%= @user.errors.full_messages.to_sentence %>
+        </div>
+      <% end %>
+
+      <strong><%= f.label :name %></strong>
+      <%= f.text_field :name, placeholder: 'Fill your name here', class: 'form-control' %>
+      <br>
+
+      <strong><%= f.label :email %></strong>
+      <%= f.text_field :email, placeholder: 'Fill your email here', class: 'form-control' %>
+      <br>
+
+      <strong><%= f.label :password %></strong>
+      <%= f.password_field :password, placeholder: 'Fill your password here', class: 'form-control' %>
+      <br>
+
+      <%= f.submit 'Create Account', class: 'btn btn-success button' %>
     <% end %>
-
-    <strong><%= f.label :name %></strong>
-    <%= f.text_field :name, placeholder: 'Fill your name here', class: 'form-control' %>
-    <br>
-
-    <strong><%= f.label :email %></strong>
-    <%= f.text_field :email, placeholder: 'Fill your email here', class: 'form-control' %>
-    <br>
-
-    <strong><%= f.label :password %></strong>
-    <%= f.password_field :password, placeholder: 'Fill your password here', class: 'form-control' %>
-    <br>
-
-    <%= f.submit 'Create Account', class: 'btn btn-success button' %>
-  <% end %>
+  </div>
 </div>

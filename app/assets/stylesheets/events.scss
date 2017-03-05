@@ -55,9 +55,11 @@
 }
 
 .events-list {
-    margin-top: 0px;
+    margin-top: 1px;
     padding: 30px 150px;
     background-color: $gray-lighter;
+    background-image: url("main-bg.png");
+    background-repeat: repeat;
     .card {
         margin-bottom: 20px;
         img {
@@ -70,6 +72,16 @@
         .card-title {
             font-size: 18px;
             font-weight: bold;
+            color: #B71C1C;
+        }
+        .card-time-details {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .card-venue-details {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            height: 3rem;
         }
     }
     a {
@@ -83,6 +95,8 @@
         padding-top: 80px;
         color: rgb(233, 237, 240);
         background-color: #303B46;
+        background-image: url("sidebar-bg.png");
+        background-repeat: repeat;
         float: left;
         position: fixed;
         min-height: 700px;
@@ -123,6 +137,8 @@
         .hero-img {
             min-height: 400px;
         }
+        background-image: url("main-bg.png");
+        background-repeat: repeat;
         .container {
             margin-left: 50px;
             margin-top: 30px;

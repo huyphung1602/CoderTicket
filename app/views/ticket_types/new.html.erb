@@ -1,7 +1,6 @@
 <br>
 <div class="container">
-  <h1><%= @event.name %></h1>
-  <h1>Create New Ticket Type</h1><br>
+  <h1><strong>New Ticket Type</strong></h1><br>
 
   <%= form_for @ticket_type, url: event_ticket_types_path(event_id: @event.id) do |f| %>
     <% if @ticket_type.errors.size > 0 %>

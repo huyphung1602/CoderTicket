@@ -1,17 +1,19 @@
-<br>
-<div class="container">
-  <h1>Log In</h1>
+<div class="session-bg">
   <br>
+  <div class="container">
+    <h1><strong>Log In</strong></h1>
+    <br>
 
-  <%= form_tag sessions_path do %>
-    <%= text_field_tag :email, params[:email],
-        placeholder: 'Fill your email here',
-        class: 'form-control' %><br>
+    <%= form_tag sessions_path do %>
+      <%= text_field_tag :email, params[:email],
+          placeholder: 'Fill your email here',
+          class: 'form-control' %><br>
 
-    <%= password_field_tag :password, nil,
-        placeholder: 'Fill your password here',
-        class: 'form-control' %><br>
+      <%= password_field_tag :password, nil,
+          placeholder: 'Fill your password here',
+          class: 'form-control' %><br>
 
-    <%= submit_tag "Sign In", class: 'btn btn-success button', data: {disable_with: "Signing in..."} %>
-  <% end %>
+      <%= submit_tag "Sign In", class: 'btn btn-success button', data: {disable_with: "Signing in..."} %>
+    <% end %>
+  </div>
 </div>

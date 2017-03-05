@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :signed_in?,
                 :is_event_owner?, :event_edit_permission,
-                :is_published
+                :is_not_published?
 
   def current_user 
     return @current_user if @current_user
@@ -34,13 +34,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def is_published?
+  def is_not_published?
     @event = Event.find(Event.find(params[:id]))
 
     if @event.published_at == nil
-      false
-    else
       true
+    else
+      false
     end
   end
 end

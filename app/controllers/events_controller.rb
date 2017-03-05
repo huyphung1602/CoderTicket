@@ -2,15 +2,33 @@ class EventsController < ApplicationController
   before_action :event_edit_permission?, only: [:edit]
 
   def index
-    @events = Event.all.order('created_at DESC')
+    @events = Event.all.order('starts_at DESC')
 
     if params[:search]
-      @events = Event.search(params[:search]).order("created_at DESC")
+      @events = Event.search(params[:search]).order("starts_at DESC")
     end
   end
 
   def show
     @event = Event.find(params[:id].to_param)
+  end
+
+  def have_enough_ticket_types?
+    @event = Event.find(params[:id])
+
+    if @event.ticket_types.count > 0
+      @event.published_at = Time.now
+      if @event.save
+        flash[:success] = "Event has been published successfully."
+        redirect_to root_path
+      else
+        flash[:error] = "Fail to published event."
+        render 'show'
+      end
+    else
+      flash[:error] = "Event need at least one ticket type."
+      render 'show'
+    end
   end
 
   def new

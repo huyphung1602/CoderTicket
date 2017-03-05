@@ -36,9 +36,10 @@
           <a href="<%= edit_event_path %>" class="btn btn-info btn-sm" role="button">
             <i class="fa fa-pencil" aria-hidden="true"></i> Edit Event
           </a>
-          <a href="#" class="btn btn-primary btn-sm" role="button">
-            <i class="fa fa-check" aria-hidden="true"></i> Publish Event
-          </a>
+          <% if is_not_published? %>
+            <%= link_to "Publish", publish_event_path(id: @event.id),
+                :method => :post, class: 'btn btn-primary btn-sm' %>
+          <% end %>
           <br><br><br>
         <% end %>
 

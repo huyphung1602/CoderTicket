@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :tickets
     resources :ticket_types, only: [:new, :create]
     member do
-      post 'publish'
+      post 'publish' => 'events#have_enough_ticket_types?'
     end
   end
   
