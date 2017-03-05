@@ -11,7 +11,7 @@
 
 The following **required** functionality is complete:
 
-* [ ] Implement required user stories
+* [x] Implement required user stories
 * [ ] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
 
 The person with best test coverage will win a small present from the instructor :)
@@ -31,8 +31,8 @@ The person with best test coverage will win a small present from the instructor 
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users cannot buy more tickets than the quantity available.
 * [x] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 
 #### Users
@@ -58,7 +58,7 @@ The person with best test coverage will win a small present from the instructor 
 
 ### Optional Stories
 
-* [ ] Users cannot buy tickets to events that occur in the past.
+* [x] Users cannot buy tickets to events that occur in the past.
 * [ ] Users can log in with Facebook.
 * [ ] Users receive an email when they have purchased a ticket.
 * [ ] Users can see "related events" when browsing an event. Related events should belong to the same category and be in the same region.
@@ -69,6 +69,7 @@ The person with best test coverage will win a small present from the instructor 
 
 ### My Own Optional Stories
 * [x] Beautiful UI with textures for background, navbar and sidebar
+* [x] User can see how many tickets available (remain tickets of each type)
 
 ## Notes
 

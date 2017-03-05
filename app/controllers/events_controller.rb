@@ -2,10 +2,10 @@ class EventsController < ApplicationController
   before_action :event_edit_permission?, only: [:edit]
 
   def index
-    @events = Event.all.order('starts_at DESC')
+    @events = Event.published_and_upcoming.order('published_at DESC')
 
     if params[:search]
-      @events = Event.search(params[:search]).order("starts_at DESC")
+      @events = Event.search(params[:search]).order("published_at DESC")
     end
   end
 
@@ -26,11 +26,11 @@ class EventsController < ApplicationController
         flash[:success] = "Event has been published successfully."
         redirect_to root_path
       else
-        flash[:error] = "Fail to published event."
+        flash.now[:error] = "Fail to published event."
         render 'show'
       end
     else
-      flash[:error] = "Event need at least one ticket type."
+      flash.now[:error] = "Event need at least one ticket type."
       render 'show'
     end
   end

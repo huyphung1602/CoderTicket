@@ -1,4 +1,5 @@
-<div class="container-fluid no-pad events-detail behind-side-bar">
+<div class="behind-side-bar">    
+<div class="container-fluid no-pad events-detail">
   <div class="row no-pad">
     <div class="col-md-3 sidebar">
       <p>
@@ -26,7 +27,7 @@
     </div>
     <div class="col-md-9 event-content">
       <div class="hero-img hidden-sm-down" style="background-image: url(<%= @event.hero_image_url %>); background-size: cover;"> </div>
-      <div class="container">
+      <div class="container-mine">
         <h3> <%= @event.name %> </h3>
 
         <% if is_event_owner? %>
@@ -70,4 +71,5 @@
       </div>  
     </div>
   </div>
+</div>
 </div>

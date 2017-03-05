@@ -22,32 +22,53 @@
 
     </div>
   </div>
+
   <div class="row">
-    <div class="col-md-11 col-md-offset-1">  
+    <div class="col-md-11 col-md-offset-3">
+
       <table class="table">
-        <th> Ticket Type </th>
-        <th> Unit Price </th>
-        <th> Quantity </th>
-        <th></th>
-      
+        <th>Ticket name</th>
+        <th>Price</th>
+        <th>Remain Tickets</th>
+
         <% @event.ticket_types.each do |type| %>
         <tr>
           <td> <%= type.name %> </td>
           <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-
-          <%= form_tag event_tickets_path(event_id: @event.id,
-              ticket_type_id: type.id) do |f| %>
-            <td>
-              <%= select_tag(:quantity, options_for_select(0..10))%>
-            </td>
-            <td>
-              <%= submit_tag 'Purchase', class: 'btn btn-success btn-sm' %>
-            </td>
-          <% end %>
+          <td> <%= type.max_quantity - type.tickets.count %></td>
         </tr>
         <% end %> 
       </table>
     </div>
   </div>
-</div>  
 
+  <div class="row">
+    <div class="col-md-11 col-md-offset-3">
+      <%= form_tag event_tickets_path(event_id: @event.id) do |f| %>
+
+        <strong>Name</strong>
+        <%= text_field_tag :name, params[:name], placeholder: 'Fill your name here',
+            class: 'form-control' %><br>
+        
+        <strong>Phone numbers</strong>
+        <%= text_field_tag :phone, params[:phone], placeholder: 'Fill your phone numbers here',
+            class: 'form-control' %><br>
+
+        <strong>Ship Address</strong>
+        <%= text_area_tag :address, params[:address], placeholder: 'Fill your address here',
+            class: 'form-control' %><br>
+
+        <strong>Select Ticket Type</strong>
+        <%= select_tag(:ticket_type_id,
+            options_from_collection_for_select(@ticket_types, "id", "name"),
+            class: 'form-control') %><br>
+
+        <strong>Select quantity</strong>
+        <%= select_tag(:quantity, options_for_select(0..10), class: 'form-control') %><br>
+
+        <%= submit_tag 'Purchase', class: 'btn btn-success btn-sm' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
