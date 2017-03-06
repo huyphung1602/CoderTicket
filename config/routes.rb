@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'upcoming' => 'events#index'
   delete 'log_out' => 'sessions#destroy'
+  get 'auth/:provider/callback' => 'sessions#callback'
 end

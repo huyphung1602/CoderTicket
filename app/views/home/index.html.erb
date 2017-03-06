@@ -6,8 +6,15 @@
     
     <%= link_to 'Log In', new_session_path, class: 'btn btn-primary button' %>
     <%= link_to 'Sign Up', new_user_path, class: 'btn btn-success button' %>
-    <%= link_to 'Visit as Guest', upcoming_path, class: 'btn btn-info button' %>
-    <br><br>
+    <%= link_to 'Visit as Guest', upcoming_path, class: 'btn btn-info button' %><br><br>
+ 
+    <div id="custom-button">
+      <a href="/auth/facebook" class="btn facebook">
+        <span class="label">Log in with Facebook</span>
+        <span class="icon fa fa-facebook"></span>
+      </a>
+    </div>
+    <br>
 
     <img class="img-fluid rounded"
           src="http://kenh14cdn.com/web_images/ColorMeRun_v1/bg-header.jpg"

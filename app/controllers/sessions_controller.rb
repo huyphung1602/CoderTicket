@@ -18,16 +18,16 @@ class SessionsController < ApplicationController
     end
   end
 
-  # def callback
-  #   if user = User.from_omniauth(env["omniauth.auth"])
-  #     flash[:success] = 'Signed in with Facebook'
-  #     session[:user_id] = user.id
-  #     redirect_to root_path
-  #   else
-  #     flash[:error] = "Cannot signing in with Facebook. Let's register"
-  #     redirect_to new_user_path
-  #   end
-  # end
+  def callback
+    if user = User.from_omniauth(env["omniauth.auth"])
+      flash[:success] = 'Signed in with Facebook'
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      flash[:error] = "Cannot signing in with Facebook. Let's register"
+      redirect_to new_user_path
+    end
+  end
 
   def destroy
     session[:user_id] = nil
