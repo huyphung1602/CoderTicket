@@ -15,7 +15,7 @@
 
 <script type="text/javascript">
   jQuery(document).on('page:change turbolinks:load', function() {
-    // $( document ).ready(function() {
+    $(window).bind("load", function () {
       var heights = $(".mycard").map(function() {
           return $(this).height();
       }).get(),
@@ -23,7 +23,7 @@
       maxHeight = Math.max.apply(null, heights);
 
       $(".mycard").height(maxHeight);
-    // });
+    });
   });
 </script>
 
