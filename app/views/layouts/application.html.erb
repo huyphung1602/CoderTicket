@@ -15,15 +15,15 @@
 
 <script type="text/javascript">
   jQuery(document).on('page:change turbolinks:load', function() {
-    $(window).bind("load", function () {
-      var heights = $(".mycard").map(function() {
-          return $(this).height();
-      }).get(),
+      setTimeout(function () {
+        var heights = $(".mycard").map(function() {
+            return $(this).height();
+        }).get(),
 
-      maxHeight = Math.max.apply(null, heights);
+        maxHeight = Math.max.apply(null, heights);
 
-      $(".mycard").height(maxHeight);
-    });
+        $(".mycard").height(maxHeight);
+      }, 2000);
   });
 </script>
 
