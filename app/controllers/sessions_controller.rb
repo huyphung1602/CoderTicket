@@ -20,11 +20,11 @@ class SessionsController < ApplicationController
 
   def callback
     if user = User.from_omniauth(env["omniauth.auth"])
-      flash[:success] = 'Signed in with Facebook'
+      flash[:success] = 'Logged in with Facebook'
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:error] = "Cannot signing in with Facebook. Let's register"
+      flash[:error] = "Cannot logged in with Facebook. Let's register"
       redirect_to new_user_path
     end
   end

@@ -28,6 +28,11 @@
     <div class="col-md-9 event-content">
       <div class="hero-img hidden-sm-down" style="background-image: url(<%= @event.hero_image_url %>); background-size: cover;"> </div>
       <div class="container-mine">
+        <% if flash_messages.presence %>
+          <%= flash_messages %>
+        <% else %>
+        <% end %>
+
         <h3> <%= @event.name %> </h3>
 
         <% if is_event_owner? %>

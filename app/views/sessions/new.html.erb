@@ -2,6 +2,11 @@
   <br>
   <div class="container">
     <h1><strong>Log In</strong></h1>
+
+    <% if flash_messages.presence %>
+      <%= flash_messages %>
+    <% else %>
+    <% end %>
     <br>
 
     <%= form_tag sessions_path do %>

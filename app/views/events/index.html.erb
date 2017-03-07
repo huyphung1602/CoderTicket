@@ -9,14 +9,18 @@
 
 <% if @events.count > 0 %>
   <div class="container-fluid events-list">
-      <% @events.in_groups_of(2) do |g| %>
-        <div class="row">
-          <% g.compact.each do |e| %>
-              <%= render partial: 'card', locals: {event: e} %>
-          <% end %>
-        </div>  
-      <% end %>
-    </div>
+    <% if flash_messages.presence %>
+      <%= flash_messages %>
+    <% else %>
+    <% end %>
+
+    <% @events.in_groups_of(2) do |g| %>
+      <div class="row">
+        <% g.compact.each do |e| %>
+            <%= render partial: 'card', locals: {event: e} %>
+        <% end %>
+      </div>  
+    <% end %>
   </div>
 <% else %>
   <div class="myevents-nothing">

@@ -1,6 +1,12 @@
 <div class="home-bg">
   <br>
   <div class="container">
+  
+    <% if flash_messages.presence %>
+      <%= flash_messages %>
+    <% else %>
+    <% end %>
+
     <h1><strong>Welcome to Tickets Hunter</strong></h1>
     <br>
     
