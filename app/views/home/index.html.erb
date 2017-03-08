@@ -10,11 +10,13 @@
     <h1><strong>Welcome to Tickets Hunter</strong></h1>
     <br>
     
-    <%= link_to 'Log In', new_session_path, class: 'btn btn-primary button' %>
-    <%= link_to 'Sign Up', new_user_path, class: 'btn btn-success button' %>
-    <span data-turbolinks="false">
-      <%= link_to 'Visit as Guest', upcoming_path, class: 'btn btn-info button' %><br><br>
-    </span>
+    <%= link_to 'Log In', new_session_path, class: 'btn btn-primary' %>
+    <%= link_to 'Sign Up', new_user_path, class: 'btn btn-success' %>
+
+    <a href="<%= upcoming_path %>" class="btn btn-info" role="button" data-turbolinks="false">
+      Visit as Guest
+    </a>
+    <br><br>
     
     <div data-turbolinks="false">
       <div id="custom-button">
