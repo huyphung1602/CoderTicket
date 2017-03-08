@@ -25,3 +25,15 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  jQuery(document).on('page:load turbolinks:load', function() {
+    var heights = $(".mycard").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".mycard").height(maxHeight);
+  });
+</script>

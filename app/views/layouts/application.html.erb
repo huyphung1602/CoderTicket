@@ -13,19 +13,5 @@
 
 <%= yield %>
 
-<script type="text/javascript">
-  jQuery(document).on('page:change turbolinks:load', function() {
-      setTimeout(function () {
-        var heights = $(".mycard").map(function() {
-            return $(this).height();
-        }).get(),
-
-        maxHeight = Math.max.apply(null, heights);
-
-        $(".mycard").height(maxHeight);
-      }, 2000);
-  });
-</script>
-
 </body>
 </html>
