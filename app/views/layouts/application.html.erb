@@ -14,13 +14,13 @@
 
 <script type="text/javascript">
   jQuery(document).on('page:change turbolinks:load', function() {
-    var heights = $(".mycard").map(function() {
+    var heights = $(".card").map(function() {
         return $(this).height();
     }).get(),
 
     maxHeight = Math.max.apply(null, heights);
 
-    $(".mycard").height(maxHeight);
+    $(".card").height(maxHeight);
     console.log("My script was run");
   });
 </script>
