@@ -1,6 +1,17 @@
+require 'pry'
 require "rails_helper"
 
 RSpec.describe EventsController, type: :controller do
+  def valid_event_params
+    {
+      extended_html_description: "...",
+      venue_id: Venue.first.try(:id) || FactoryGirl.create(:venue).id,
+      category_id: Category.first.try(:id) || FactoryGirl.create(:category).id,
+      name: "Valid Event",
+      starts_at: 1.day.from_now
+    }
+  end
+
   describe "GET #index" do
     it "responds 200 when visitting" do
       get :index
@@ -25,9 +36,17 @@ RSpec.describe EventsController, type: :controller do
 
   # Test method create event
   describe "respond to" do
-    it "responds to html by default" do
-      post :create, { :event => { :name => "Bingo" } }
+    it "render new if event params aren't valid" do
+      post :create, params: { :event => { :name => "Bingo" } }
       expect(response.content_type).to eq "text/html"
+      expect(response).to render_template('new')
+    end
+
+    it "redirects to root_path if event can be created" do
+      post :create, params: { :event => valid_event_params }
+      expect(response.content_type).to eq "text/html"
+      event = assigns(:event)
+      expect(response).to redirect_to(root_path)
     end
   end
 end

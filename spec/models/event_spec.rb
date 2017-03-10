@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Event, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
+  describe "#save" do
+    it "can save with valid params" do
+      event = build(:event)
+      event.save!
+      expect(event).to be_persisted
+    end
+  end
 
   describe ".published_and_upcoming" do
     it "returns [] empty where there ise no event" do
@@ -54,25 +61,22 @@ RSpec.describe Event, type: :model do
   end
 
   describe "#venue_name" do
+    let(:event) { Event.new }
+    let(:venue) { Venue.new name: "GEM center" }
+
     it "returns nil if there is no value" do
-      event = Event.new
       expect(event.venue_name).to eq nil
     end
 
     it "returns venue name" do
-      venue = Venue.new name: "GEM center"
-      event = Event.new venue: venue
-      event.save!(validate: false)
-
+      event.venue = venue
       expect(event.venue_name).to eq "GEM center"
     end
   end
 
   describe "#to_param" do
     it "returns beautiful name" do
-      event = Event.new(name: "color-me-run", id: 1)
-      event.save!(validate: false)
-
+      event = Event.new(name: "Color Me Run", id: 1)
       expect(event.to_param).to eq "1-color-me-run"
     end
   end
@@ -99,7 +103,7 @@ RSpec.describe Event, type: :model do
       d = Event.new(name: "Color me run Saigon")
       e = Event.new(name: "Dan Truong Show")
       f = Event.new(name: "Coderschool Demo Day")
-      
+
       a.save!(validate: false)
       b.save!(validate: false)
       c.save!(validate: false)

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get 'my' => 'events#my_events'
     end
   end
-  
+
   root 'home#index'
   get 'upcoming' => 'events#index'
   delete 'log_out' => 'sessions#destroy'

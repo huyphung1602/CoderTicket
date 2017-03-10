@@ -47,11 +47,25 @@ class EventsController < ApplicationController
     @venues = Venue.all
     @event.owner = current_user
 
-    if @event.save
-      flash[:success] = "Event has been created successfully."
-      redirect_to root_path
-    else
-      render 'new'
+    @event.save
+
+    respond_to do |format|
+      format.html do
+        if @event.persisted?
+          flash[:success] = "Event has been created successfully."
+          redirect_to root_path
+        else
+          render 'new'
+        end
+      end
+
+      format.json do
+        if @event.persisted?
+          render json: {status: :ok, event: @event}
+        else
+          render json: {status: :error, event: @event.errors.full_messages}
+        end
+      end
     end
   end
 

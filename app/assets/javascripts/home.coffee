@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+window.resizeIfNeeded = ->
+  heights = $('.card').map(-> $(this).height()).get()
+  maxHeight = Math.max.apply(null, heights)
+  console.log("heights, maxHeight", heights, maxHeight)
+  $(".card").height(maxHeight)
+
+window.setupCardResizing = ->
+  console.log("bind load events to <img> tags")
+  $("img").on("load", resizeIfNeeded)
+
+
+$(document).on 'turbolinks:load', ->
+  console.log("loading image resizing")
+  setupCardResizing()
