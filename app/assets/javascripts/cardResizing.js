@@ -1,16 +1,16 @@
 jQuery(document).on('page:change turbolinks:load', function() {
-  setupCardResizing()
+  resizeIfNeeded()
 });
 
-function setupCardResizing() {
-  $("img").load(function(){
-    console.log("Image loaded");
-    resizeIfNeeded()
-  })
-}
+// function setupCardResizing() {
+//   $("img").load(function(){
+//     console.log("Image loaded");
+//     resizeIfNeeded()
+//   })
+// }
 
 function resizeIfNeeded() {
-  var heights = $(".card").map(function() {
+  var heights = $(".card-block").map(function() {
       return $(this).height();
   }).get(),
 
@@ -18,6 +18,6 @@ function resizeIfNeeded() {
   console.log("heights: ", heights);
   console.log("max height: ", maxHeight);
 
-  $(".card").height(maxHeight);
-  console.log("Resized the card height to max height", $(".card").height());
+  $(".card-block").height(maxHeight);
+  console.log("Resized the card height to max height", $(".card-block").height());
 }
